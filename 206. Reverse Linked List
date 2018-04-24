@@ -12,13 +12,12 @@ public:
         if(head==NULL||head->next==NULL)
             return head;
         ListNode *pre=NULL;
-        ListNode *next=NULL;
         while(head)
         {
-             next=head->next;
-         head->next=pre;
-         pre=head;
-         head=next;
+            ListNode* temp=head->next;
+            head->next=pre;
+            pre=head;
+            head=temp;
         }
         return pre;
     }
